@@ -9,7 +9,7 @@
 
 Check out the live service / demo and see for yourself [PHP-BLOG](https://blog.swqh.online)
 
-### Docker
+## Docker
 
 Docker is the easiest way. 
 

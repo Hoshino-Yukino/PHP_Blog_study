@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>ブログ - ログイン / 登録</title>
+    <link rel="stylesheet" href="../static/css/login.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <script src="https://js.hcaptcha.com/1/api.js?hl=ja" async defer></script>
+    <script src="../static/js/login.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="login-container">
+            <h2>ログイン</h2>
+            <form method="post" action="check.php">
+                <div class="form-group">
+                    <label for="userIdInput">ユーザ ID：</label>
+                    <input type="text" name="userId" id="userIdInput" required>
+                </div>
+                <div class="form-group">
+                    <label for="passWordInput">パスワード：</label>
+                    <input type="password" name="password" id="passWordInput" required>
+                </div>
+                <div class="cf-turnstile" 
+                    data-sitekey="0x4AAAAAAA5RjmcHEOkVY3BE" data-theme="light"
+                    data-language="ja"></div>
+                <div class="btn-container">
+                    <button type="submit" id="loginBtn">ログイン</button>
+                </div>
+            </form>
+            <p><a href="#" id="showRegister">新規登録はこちら</a></p>
+            <p><a href="../articles/search.php">ゲストとしてログイン</a></p>
+        </div>
+
+        <div class="register-container" style="display: none;">
+            <h2>新規登録</h2>
+            <form method="post" action="../users/register.php">
+                <div class="form-group">
+                    <label for="registerUserId">ユーザ ID：</label>
+                    <input type="text" name="registerUserId" id="registerUserId" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerName">名前：</label>
+                    <input type="text" name="registerName" id="registerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">パスワード：</label>
+                    <input type="password" name="registerPassword" id="registerPassword" required>
+                </div>
+                <div class="h-captcha" data-sitekey="2f90d4ca-1316-47c0-b0a6-9dbca4b60f96"></div>
+                <div class="btn-container">
+                    <button type="submit" id="registerBtn">登録</button>
+                </div>
+            </form>
+            <p><a href="#" id="showLogin">ログインはこちら</a></p>
+        </div>
+    </div>
+</body>
+</html>
